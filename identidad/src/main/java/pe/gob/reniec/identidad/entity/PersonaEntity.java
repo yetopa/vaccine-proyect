@@ -6,7 +6,7 @@ import java.sql.Date;
 @Entity
 @Table(name = "persona", schema = "dbreniec", catalog = "")
 public class PersonaEntity {
-    private int personaId;
+    private Integer personaId;
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
