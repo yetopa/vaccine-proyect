@@ -22,4 +22,11 @@ public class PersonaServiceImpl implements PersonaService{
     public List<PersonaEntity> findAllPersona() {
         return (List<PersonaEntity>) personaRepository.findAll();
     }
+
+    @Override
+    public List<PersonaEntity> findByNombreOrApellido(String nombre) {
+        return personaRepository.findByNombreStartsWithOrApellidoPaternoStartsWithOrApellidoMaternoStartsWith(
+                nombre, nombre, nombre
+        );
+    }
 }

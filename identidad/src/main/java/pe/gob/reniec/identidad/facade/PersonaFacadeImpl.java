@@ -15,15 +15,21 @@ public class PersonaFacadeImpl implements PersonaFacade{
     private PersonaService personaService;
 
     @Override
-    @GetMapping("/{dni}")
+    @GetMapping("/{dni}/dni")
     public List<PersonaEntity> findPersonaByDni(@PathVariable(name = "dni") String dni) {
         return personaService.findPersonaByDni(dni);
     }
 
     @Override
-    @GetMapping("/")
+    @GetMapping("")
     public List<PersonaEntity> findAllPersona() {
         return personaService.findAllPersona();
+    }
+
+    @Override
+    @GetMapping("/{nombre}/nombre")
+    public List<PersonaEntity> findByName(@PathVariable(name = "nombre") String nombre) {
+        return personaService.findByNombreOrApellido(nombre);
     }
 
 

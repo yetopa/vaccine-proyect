@@ -8,4 +8,5 @@ public interface PersonaService {
 
     public List<PersonaEntity> findPersonaByDni(String dni);
     public List<PersonaEntity> findAllPersona();
+    public List<PersonaEntity> findByNombreOrApellido(String nombre);
 }

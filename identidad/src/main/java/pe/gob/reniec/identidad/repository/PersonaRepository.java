@@ -11,4 +11,7 @@ public interface PersonaRepository extends CrudRepository<PersonaEntity, Long> {
     public List<PersonaEntity> getPersonaEntityByDni(String dni);*/
 
     public List<PersonaEntity> findByDniStartsWith(String dni);
+    public List<PersonaEntity>
+            findByNombreStartsWithOrApellidoPaternoStartsWithOrApellidoMaternoStartsWith
+            (String nombre, String apellidoPaterno, String apellidoMaterno);
 }
