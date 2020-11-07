@@ -8,7 +8,7 @@ import pe.gob.reniec.identidad.service.PersonaService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/persona")
+@RequestMapping("/persona")
 public class PersonaFacadeImpl implements PersonaFacade{
 
     @Autowired
