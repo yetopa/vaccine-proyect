@@ -33,7 +33,7 @@ public class PacienteServiceImpl implements PacienteService {
         List<PersonaDTO> listPerson = new ArrayList<>();
 
         try {
-            listPerson =  restUtils.callService(configurationProperties.url_reniec + "/api/persona/{dni}/dni", List.class, HttpMethod.GET, null, pathVariable, null, null, header );
+            listPerson =  restUtils.callService(configurationProperties.url_reniec + "/persona/{dni}/dni", List.class, HttpMethod.GET, null, pathVariable, null, null, header );
         } catch (Exception e){
             LOGGER.error("Error mientras se intento buscar  persona por DNI", e);
         }
@@ -49,7 +49,7 @@ public class PacienteServiceImpl implements PacienteService {
         List<PersonaDTO> listPerson = new ArrayList<>();
 
         try {
-            listPerson =  restUtils.callService(configurationProperties.url_reniec + "/api/persona/{nombre}/nombre", List.class, HttpMethod.GET, null, pathVariable, null, null, header );
+            listPerson =  restUtils.callService(configurationProperties.url_reniec + "/persona/{nombre}/nombre", List.class, HttpMethod.GET, null, pathVariable, null, null, header );
         } catch (Exception e){
             LOGGER.error("Error mientras se intento buscar  persona por Nombre", e);
         }
