@@ -12,6 +12,7 @@ public class PersonaEntity {
     private String apellidoMaterno;
     private String dni;
     private Date fechaNacimiento;
+    private String sexo;
 
     @Id
     @Column(name = "persona_id")
@@ -102,5 +103,15 @@ public class PersonaEntity {
         result = 31 * result + (dni != null ? dni.hashCode() : 0);
         result = 31 * result + (fechaNacimiento != null ? fechaNacimiento.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "sexo")
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 }

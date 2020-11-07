@@ -14,9 +14,12 @@
 				<tr th:if="${dashboardPaciente != null}" th:each="paciente,iterStart : ${dashboardPaciente}">
                        <td><a data-toggle="tab" href="#contact-1" class="client-link"
                                 th:text="${paciente.nombre + ' ' + paciente.apellidoPaterno +' ' + paciente.apellidoMaterno}"></a></td>
-                       <td th:text="${paciente.dni}"></td>
-                       <td class="contact-type"><i class="fa fa-envelope"> </i></td>
-                       <td th:text="${paciente.fechaNacimiento}"></td>
+                        <td class="contact-type"><i class="fa fa-credit-card"> </i></td>
+                        <td th:text="${paciente.dni}"></td>
+                       <td class="contact-type"><i class="fa fa-calendar"> </i></td>
+                        <td th:text="${paciente.fechaNacimiento}"></td>
+                        <td th:text="${#strings.toString(paciente.edadMeses) + ' Meses'}"></td>
+                       <td th:text="${paciente.sexo}"></td>
                  	</tr>
 			</tbody>
 			<tfoot>

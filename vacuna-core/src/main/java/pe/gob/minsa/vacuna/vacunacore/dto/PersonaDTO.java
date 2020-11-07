@@ -11,6 +11,8 @@ public class PersonaDTO implements Serializable {
     private String apellidoMaterno;
     private String dni;
     private Date fechaNacimiento;
+    private String sexo;
+    private int edadMeses;
 
     public Integer getPersonaId() {
         return personaId;
@@ -58,5 +60,21 @@ public class PersonaDTO implements Serializable {
 
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public int getEdadMeses() {
+        return edadMeses;
+    }
+
+    public void setEdadMeses(int edadMeses) {
+        this.edadMeses = edadMeses;
     }
 }
