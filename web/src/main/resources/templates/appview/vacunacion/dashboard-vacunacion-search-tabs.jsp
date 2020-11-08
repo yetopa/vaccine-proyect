@@ -22,7 +22,18 @@
 	  $.ajax({
 			url: "/dashboard/vacunacion/show/new",
 			success: function(response) {
-	            $("#div-dashboard-vacunacion-new").html( response );
+                toastr.options = {
+                    closeButton: true,
+                    debug: false,
+                    progressBar: true,
+                    showMethod: 'slideDown',
+                    timeOut: 4000
+                };
+                if (data.code === 200){
+                    $("#div-dashboard-vacunacion-new").html( response );
+                } else {
+                    toastr.error(data.message, 'Message');
+                }
 	        }
 		});
   }

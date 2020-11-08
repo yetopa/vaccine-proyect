@@ -12,7 +12,7 @@ import java.util.Date;
 @Component
 public class DateUtils {
 
-    public int diffInMonths(Date fecha) {
+    public int ageInMonths(Date fecha) {
         Calendar c = Calendar.getInstance();
         c.setTime(fecha);
         LocalDate ld = LocalDate.of(c.get(Calendar.YEAR), c.get(Calendar.MONTH)+1, c.get(Calendar.DAY_OF_MONTH));

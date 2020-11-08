@@ -8,5 +8,6 @@ public interface PacienteCoreRest {
 
     List<PersonaDTO> findPacienteByDni(String dni);
     List<PersonaDTO> findPacienteByNombre(String dni);
+    PersonaDTO findPacienteByUniqueDni(String dni);
 
 }

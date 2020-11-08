@@ -8,4 +8,5 @@ public interface PacienteService {
 
     public List<PersonaDTO> findPacienteByDni(String dni);
     public List<PersonaDTO> findPacienteByNames(String nombre);
+    public PersonaDTO findPacienteByUniqueDNI(String dni);
 }

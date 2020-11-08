@@ -28,4 +28,10 @@ public class PacienteCoreRestImp implements PacienteCoreRest{
     public List<PersonaDTO> findPacienteByNombre(@PathVariable(name = "nombre") String nombre) {
         return pacienteService.findPacienteByNames(nombre);
     }
+
+    @Override
+    @GetMapping("/{dni}/uniqueDni")
+    public PersonaDTO findPacienteByUniqueDni(@PathVariable(name = "dni")  String dni) {
+        return pacienteService.findPacienteByUniqueDNI(dni);
+    }
 }

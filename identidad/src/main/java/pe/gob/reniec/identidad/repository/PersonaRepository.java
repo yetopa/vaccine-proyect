@@ -7,9 +7,7 @@ import java.util.List;
 
 public interface PersonaRepository extends CrudRepository<PersonaEntity, Long> {
 
-    /*@Query("SELECT p from PersonaEntity where p.dni like :dni")
-    public List<PersonaEntity> getPersonaEntityByDni(String dni);*/
-
+    public PersonaEntity findByDni(String dni);
     public List<PersonaEntity> findByDniStartsWith(String dni);
     public List<PersonaEntity>
             findByNombreStartsWithOrApellidoPaternoStartsWithOrApellidoMaternoStartsWith

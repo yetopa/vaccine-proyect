@@ -29,4 +29,9 @@ public class PersonaServiceImpl implements PersonaService{
                 nombre, nombre, nombre
         );
     }
+
+    @Override
+    public PersonaEntity findByUniqueDni(String dni) {
+        return personaRepository.findByDni(dni);
+    }
 }

@@ -44,7 +44,7 @@ public class PacienteServiceImpl implements PacienteService {
             listPersonResponse =  restUtils.callService(configurationProperties.url_reniec + "/persona/{dni}/dni", List.class, HttpMethod.GET, null, pathVariable, null, null, header );
             lstPersonaDTP = mapper.convertValue(listPersonResponse, new TypeReference<List<PersonaDTO>>() { });
             for (PersonaDTO p: lstPersonaDTP) {
-                p.setEdadMeses(dateUtils.diffInMonths(p.getFechaNacimiento()));
+                p.setEdadMeses(dateUtils.ageInMonths(p.getFechaNacimiento()));
             }
         } catch (Exception e){
             LOGGER.error("Error mientras se intento buscar  persona por DNI", e);
@@ -68,4 +68,26 @@ public class PacienteServiceImpl implements PacienteService {
 
         return listPerson;
     }
+
+    @Override
+    public PersonaDTO findPacienteByUniqueDNI(String dni) {
+        Map pathVariable = new HashMap<>();
+        pathVariable.put("dni", dni);
+        Map header = new HashMap();
+        PersonaDTO personaDTO = new PersonaDTO();
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+
+            personaDTO = mapper.convertValue(
+                    restUtils.callService(configurationProperties.url_reniec + "/persona/{dni}/uniqueDni", Object.class, HttpMethod.GET, null, pathVariable, null, null, header ),
+                    PersonaDTO.class);
+            personaDTO.setEdadMeses(dateUtils.ageInMonths(personaDTO.getFechaNacimiento()));
+        } catch (Exception e){
+            LOGGER.error("Error mientras se intento buscar  persona por DNI", e);
+        }
+        return personaDTO;
+    }
+
+
 }

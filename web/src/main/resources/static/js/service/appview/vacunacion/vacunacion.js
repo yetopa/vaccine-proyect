@@ -27,10 +27,21 @@ function searchPaciente() {
 	$.ajax({
 		url: url,
 		success: function(response) {
+
             $("#div-result-search-vacunacion").html( response );
             $('#paramSearchVacunacion').focus();
             $('#paramSearchVacunacion').select();
-        }
+        }, error: function (response) {
+			toastr.options = {
+				closeButton: true,
+				debug: false,
+				progressBar: false,
+				showMethod: 'slideDown',
+				timeOut: 4000
+			};
+			console.log(response)
+			toastr.error(response.responseJSON.message, 'Message');
+		}
 	});
 }
 

@@ -11,7 +11,16 @@ public class PacienteDTO implements Serializable {
     private String apellidoMaterno;
     private String dni;
     private Date fechaNacimiento;
+    private String sexo;
     private int edadMeses;
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
 
     public Integer getPersonaId() {
         return personaId;

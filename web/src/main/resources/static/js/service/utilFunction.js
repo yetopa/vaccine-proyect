@@ -2,6 +2,7 @@
 * function to process response service by ajax
 */
 function processResponseByAjax ($response, action) {
+	console.log($response);
 	$response.done (function (data){
 		toastr.options = {
                 closeButton: true,

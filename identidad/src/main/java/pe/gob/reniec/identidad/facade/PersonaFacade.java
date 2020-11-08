@@ -9,4 +9,5 @@ public interface PersonaFacade {
     public List<PersonaEntity> findPersonaByDni(String dni);
     public List<PersonaEntity> findAllPersona();
     public List<PersonaEntity> findByName(String nombre);
+    public PersonaEntity findByUniqueDni(String dni);
 }

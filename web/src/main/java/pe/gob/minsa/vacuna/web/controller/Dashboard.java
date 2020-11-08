@@ -86,7 +86,7 @@ public class Dashboard extends BaseController{
     }
 
     @RequestMapping (value = "/dashboard/vacunacion/service/search" , method = RequestMethod.GET)
-    public String searchCustomer (Model modelo, @RequestParam(value = "param",  required=false) String param) {
+    public String searchCustomer (Model modelo, @RequestParam(value = "param",  required=false) String param) throws Exception {
         LOGGER.info("load searchCustomer...");
 
         List<PacienteDTO> pacientes;
@@ -100,10 +100,12 @@ public class Dashboard extends BaseController{
             modelo.addAttribute(KEY_MODEL_DASHBOARD_PACIENTE,pacientes);
             modelo.addAttribute(KEY_MODEL_DASHBOARD_PACIENTE_SIZE, pacientes.size());
             modelo.addAttribute("updatedate", Calendar.getInstance().getTime());
+            return "appview/vacunacion/dashboard-paciente-searh-result-tag";
         }catch (Exception e) {
             this.getResponseBaseBean().setCode(CODE_RESPONSE_ERROR);
             LOGGER.error(e.getMessage(), e);
+            throw new Exception("Error al intentar buscar pacientes");
         }
-        return "appview/vacunacion/dashboard-paciente-searh-result-tag";
+
     }
 }
