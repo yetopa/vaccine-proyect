@@ -1,5 +1,7 @@
 package pe.gob.minsa.vacuna.facade;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,6 +30,18 @@ public class PacienteFacadeImpl implements PacienteFacade{
 	@PostMapping
 	public PacienteEntity savePaciente(@RequestBody PacienteEntity entity) {
 		return pacienteService.savePacienteEntity(entity);
+	}
+
+	@Override
+	@GetMapping(value = "/byPersonaId/{personaId}")
+	public PacienteEntity findByPersonaId(@PathVariable(name = "personaId") Integer personaId) {
+		return pacienteService.findByPersonaId(personaId);
+	}
+	
+	@Override
+	@GetMapping
+	public List<PacienteEntity> findAllPacientes(){
+		return pacienteService.findAllPacientes();
 	}
 
 }

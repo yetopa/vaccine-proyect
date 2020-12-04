@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import pe.gob.minsa.vacuna.vacunacore.dto.PacienteDTO;
 import pe.gob.minsa.vacuna.vacunacore.dto.PersonaDTO;
 import pe.gob.minsa.vacuna.vacunacore.service.PacienteService;
 
@@ -20,7 +22,7 @@ public class PacienteCoreRestImp implements PacienteCoreRest{
     @Override
     @GetMapping("/{dni}/dni")
     public List<PersonaDTO> findPacienteByDni(@PathVariable(name = "dni") String dni) {
-        return pacienteService.findPacienteByDni(dni);
+        return pacienteService.findPersonaByDni(dni);
     }
 
     @Override
@@ -34,4 +36,10 @@ public class PacienteCoreRestImp implements PacienteCoreRest{
     public PersonaDTO findPacienteByUniqueDni(@PathVariable(name = "dni")  String dni) {
         return pacienteService.findPacienteByUniqueDNI(dni);
     }
+
+	@Override
+	@GetMapping("{personaId}/personaId")
+	public PacienteDTO findPacienteByPersonaId(@PathVariable(name = "personaId") Long personaId) {
+		return pacienteService.findPacienteByPesonaId( personaId);
+	}
 }

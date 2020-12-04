@@ -1,5 +1,7 @@
 package pe.gob.minsa.vacuna.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,16 @@ public class PacienteServiceImpl implements PacienteService{
 	@Override
 	public PacienteEntity findPacienteById(Long pacienteId) {
 		return pacienteRepository.findByPacienteId(pacienteId);
+	}
+
+	@Override
+	public PacienteEntity findByPersonaId(Integer personaId) {
+		return pacienteRepository.findByPersonaId(personaId);
+	}
+
+	@Override
+	public List<PacienteEntity> findAllPacientes() {
+		return (List<PacienteEntity>) pacienteRepository.findAll();
 	}
 
 }

@@ -11,4 +11,7 @@ public class ConfigurationProperties {
 
     @Value("${service.minsa.url}")
     public String url_minsa;
+    
+    @Value("${dao.vacuna.url}")
+    public String url_dao_vacuna;
 }
