@@ -96,7 +96,7 @@ public class Dashboard extends BaseController{
 
             Map<String, String> header = new HashMap<>();
 
-            pacientes = restUtils.callService(configurationProperties.url_reniec + "/paciente/{dni}/dni", List.class, HttpMethod.GET, null, pathVariable, null, null, header );
+            pacientes = restUtils.callService(configurationProperties.url_vacuna_core + "/paciente/{dni}/dni", List.class, HttpMethod.GET, null, pathVariable, null, null, header );
             modelo.addAttribute(KEY_MODEL_DASHBOARD_PACIENTE,pacientes);
             modelo.addAttribute(KEY_MODEL_DASHBOARD_PACIENTE_SIZE, pacientes.size());
             modelo.addAttribute("updatedate", Calendar.getInstance().getTime());

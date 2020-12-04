@@ -9,7 +9,7 @@ var  cleanFormNewCustomer = function () {
 		$('#fec_cliente').val('');
 		$('#apenom_cliente').focus();
 		$('#div-dashboard-search-customer-tabs').trigger('click');
-		searchCustomer();
+		// searchCustomer();
 };
 
 

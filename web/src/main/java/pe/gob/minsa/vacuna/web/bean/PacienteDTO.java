@@ -5,6 +5,7 @@ import java.sql.Date;
 
 public class PacienteDTO implements Serializable {
 
+    private Integer pacienteId;
     private Integer personaId;
     private String nombre;
     private String apellidoPaterno;
@@ -13,8 +14,27 @@ public class PacienteDTO implements Serializable {
     private Date fechaNacimiento;
     private String sexo;
     private int edadMeses;
+    private String grupoSanguineo;
+    
+    
+    
+    public String getGrupoSanguineo() {
+		return grupoSanguineo;
+	}
 
-    public String getSexo() {
+	public void setGrupoSanguineo(String grupoSanguineo) {
+		this.grupoSanguineo = grupoSanguineo;
+	}
+
+	public Integer getPersonaId() {
+		return personaId;
+	}
+
+	public void setPersonaId(Integer personaId) {
+		this.personaId = personaId;
+	}
+
+	public String getSexo() {
         return sexo;
     }
 
@@ -22,15 +42,17 @@ public class PacienteDTO implements Serializable {
         this.sexo = sexo;
     }
 
-    public Integer getPersonaId() {
-        return personaId;
-    }
+   
 
-    public void setPersonaId(Integer personaId) {
-        this.personaId = personaId;
-    }
+    public Integer getPacienteId() {
+		return pacienteId;
+	}
 
-    public String getNombre() {
+	public void setPacienteId(Integer pacienteId) {
+		this.pacienteId = pacienteId;
+	}
+
+	public String getNombre() {
         return nombre;
     }
 

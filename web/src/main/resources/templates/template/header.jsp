@@ -45,7 +45,7 @@
 <script src="../js/plugins/pace/pace.min.js" th:src="@{js/plugins/pace/pace.min.js}"></script>
 <script src="../js/plugins/pace/pace.min.js" th:src="@{js/plugins/pace/pace.min.js}"></script>
 <script src="../js/plugins/toastr/toastr.min.js" th:src="@{js/plugins/toastr/toastr.min.js}"></script>
-<script src="../js/service/client.js" th:src="@{js/service/client.js}"></script>
+<!-- <script src="../js/service/client.js" th:src="@{js/service/client.js}"></script> -->
 <script >
 	"use strict";
 	function setTitlePage(title){

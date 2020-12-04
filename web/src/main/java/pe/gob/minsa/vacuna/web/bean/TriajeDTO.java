@@ -1,9 +1,8 @@
-package pe.gob.minsa.vacuna.vacunacore.dto;
+package pe.gob.minsa.vacuna.web.bean;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class TriajeDTO implements Serializable{
+public class TriajeDTO {
 
 	private Long triajeId;
 	private Date fechaTriaje;
@@ -11,6 +10,14 @@ public class TriajeDTO implements Serializable{
 	private Double peso;
 	private Double talla;
 	private Double pc;
+	private Long personaId;
+	
+	public Long getPersonaId() {
+		return personaId;
+	}
+	public void setPersonaId(Long personaId) {
+		this.personaId = personaId;
+	}
 	public Long getTriajeId() {
 		return triajeId;
 	}
@@ -47,7 +54,6 @@ public class TriajeDTO implements Serializable{
 	public void setPc(Double pc) {
 		this.pc = pc;
 	}
-	
 	
 	
 }

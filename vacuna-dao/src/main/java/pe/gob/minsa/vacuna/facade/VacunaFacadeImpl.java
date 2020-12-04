@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import pe.gob.minsa.vacuna.entity.CitaEntity;
 import pe.gob.minsa.vacuna.entity.PlanEntity;
 import pe.gob.minsa.vacuna.entity.TriajeEntity;
 import pe.gob.minsa.vacuna.service.VacunaService;
@@ -37,5 +38,17 @@ public class VacunaFacadeImpl implements VacunaFacade{
 	@PostMapping("/triaje")
 	public TriajeEntity saveTriaje(@RequestBody TriajeEntity entity) {
 		return vacunaService.saveTriajeEntity(entity);
+	}
+
+	@Override
+	@GetMapping("cita")
+	public List<CitaEntity> listaCitas() {
+		return vacunaService.listaCita();
+	}
+	
+	@Override
+	@PostMapping("cita")
+	public CitaEntity saveCitas(@RequestBody CitaEntity cita) {
+		return vacunaService.saveCita(cita);
 	}
 }

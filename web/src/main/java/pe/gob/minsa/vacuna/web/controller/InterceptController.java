@@ -15,11 +15,11 @@ public class InterceptController {
     final int CODE_RESPONSE_NOT_COMPLETE = 500;
 
     final String MESSAGE_SUCCESS = "[SUCCESS] Proceso exitoso";
-    final String MESSAGE_ERROR = "[ERROR]: Proceso con fallido";
+    final String MESSAGE_ERROR = "[ERROR]: Proceso fallido";
     final String MESSAGE_NOT_SUCCESS = "[WARNING] Proceso no completado";
 
     @AfterReturning(
-            pointcut = "execution(* pe.gob.minsa.vacuna.web*Controller.*(..))",
+            pointcut = "execution(* pe.gob.minsa.vacuna.web.controller..*Controller.*(..))",
             returning = "objReturn"
     )
     public void setMessageResult(JoinPoint joinPoint, Object objReturn){
@@ -30,7 +30,7 @@ public class InterceptController {
                 if (code == CODE_RESPONSE_SUCCESS) {
                     ((ResponseBaseBean) objReturn).setMessage(MESSAGE_SUCCESS);
                 } else if (code == CODE_RESPONSE_ERROR) {
-                    ((ResponseBaseBean) objReturn).setMessage(MESSAGE_ERROR);
+                    if (message == null || "".equals(message)) ((ResponseBaseBean) objReturn).setMessage(MESSAGE_ERROR);
                 } else if (code == CODE_RESPONSE_NOT_COMPLETE) {
                     ((ResponseBaseBean) objReturn).setMessage(MESSAGE_NOT_SUCCESS);
                 }

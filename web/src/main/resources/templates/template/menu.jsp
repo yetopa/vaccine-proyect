@@ -28,10 +28,10 @@
                     </div>
                 </li>
                 <li class="active">
-                	<a href="#" id="loadDashboard"><i class="fa fa-hospital-o"></i> <span class="nav-label">Dashboard</span></a>
+                	<a href="#" id="loadDashboard"><i class="fa fa-hospital-o"></i> <span class="nav-label">Inicio</span></a>
                 </li>
                 <li >
-                    <a href="#" id="loadIndex"><i class="fa fa-hospital-o"></i> <span class="nav-label">Inicio</span></a>
+                    <a href="#" id="loadListaCitas"><i class="fa fa-hospital-o"></i> <span class="nav-label">Lista Citas</span></a>
                 </li>
 
             </ul>
@@ -50,7 +50,7 @@
 <!-- Custom and plugin javascript -->
 <script src="../js/plugins/pace/pace.min.js" th:src="@{js/plugins/pace/pace.min.js}"></script>
 <script src="../js/plugins/toastr/toastr.min.js" th:src="@{js/plugins/toastr/toastr.min.js}"></script>
-<script src="../js/service/client.js" th:src="@{js/service/client.js}"></script>
+<!-- <script src="../js/service/client.js" th:src="@{js/service/client.js}"></script>  -->
 
  <!-- jQuery UI -->
 <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -67,6 +67,15 @@
 		        }
 			});
 	 });
+	 $("#loadListaCitas").on("click", function () {
+		 $.ajax({
+				url: "/citas",
+				success: function(response) {
+		            $("#body").html( response );
+		        }
+			});
+	 });
+	 
 	 $("#loadIndex").on("click", function() {
 		 $("#body").load("index.html");		 
 	 }); 
