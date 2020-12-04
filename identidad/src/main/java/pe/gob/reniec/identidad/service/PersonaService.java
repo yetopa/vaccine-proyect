@@ -10,4 +10,5 @@ public interface PersonaService {
     public List<PersonaEntity> findAllPersona();
     public List<PersonaEntity> findByNombreOrApellido(String nombre);
     public PersonaEntity findByUniqueDni(String dni);
+    public PersonaEntity findByPersonId(Long personaId);
 }
