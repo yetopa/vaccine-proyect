@@ -1,33 +1,35 @@
 package pe.gob.minsa.vacuna.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "paciente_plan", schema = "dbvacuna", catalog = "")
 @IdClass(PacientePlanEntityPK.class)
-public class PacientePlanEntity {
-    private int pacientepacienteId;
-    private int planplanId;
+public class PacientePlanEntity implements Serializable{
+    private Long pacientepacienteId;
+    private Long planplanId;
     private Integer fechaAplicacion;
     private PacienteEntity pacienteByPacientepacienteId;
 
     @Id
     @Column(name = "pacientepaciente_id")
-    public int getPacientepacienteId() {
+    public Long getPacientepacienteId() {
         return pacientepacienteId;
     }
 
-    public void setPacientepacienteId(int pacientepacienteId) {
+    public void setPacientepacienteId(Long pacientepacienteId) {
         this.pacientepacienteId = pacientepacienteId;
     }
 
     @Id
     @Column(name = "planplan_id")
-    public int getPlanplanId() {
+    public Long getPlanplanId() {
         return planplanId;
     }
 
-    public void setPlanplanId(int planplanId) {
+    public void setPlanplanId(Long planplanId) {
         this.planplanId = planplanId;
     }
 
@@ -58,14 +60,14 @@ public class PacientePlanEntity {
 
     @Override
     public int hashCode() {
-        int result = pacientepacienteId;
+        Long result = pacientepacienteId;
         result = 31 * result + planplanId;
         result = 31 * result + (fechaAplicacion != null ? fechaAplicacion.hashCode() : 0);
-        return result;
+        return result.intValue();
     }
 
     @ManyToOne
-    @JoinColumn(name = "pacientepaciente_id", referencedColumnName = "paciente_id", nullable = false)
+    @JoinColumn(name = "pacientepaciente_id", referencedColumnName = "paciente_id", nullable = false, insertable = false, updatable = false)
     public PacienteEntity getPacienteByPacientepacienteId() {
         return pacienteByPacientepacienteId;
     }

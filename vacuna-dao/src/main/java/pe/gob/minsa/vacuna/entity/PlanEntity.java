@@ -1,22 +1,24 @@
 package pe.gob.minsa.vacuna.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "plan", schema = "dbvacuna", catalog = "")
-public class PlanEntity {
-    private int planId;
+public class PlanEntity implements Serializable{
+    private Long planId;
     private String descVacuna;
     private Integer edad;
     private String descDosis;
 
     @Id
     @Column(name = "plan_id")
-    public int getPlanId() {
+    public Long getPlanId() {
         return planId;
     }
 
-    public void setPlanId(int planId) {
+    public void setPlanId(Long planId) {
         this.planId = planId;
     }
 
@@ -67,10 +69,10 @@ public class PlanEntity {
 
     @Override
     public int hashCode() {
-        int result = planId;
+        Long result = planId;
         result = 31 * result + (descVacuna != null ? descVacuna.hashCode() : 0);
         result = 31 * result + (edad != null ? edad.hashCode() : 0);
         result = 31 * result + (descDosis != null ? descDosis.hashCode() : 0);
-        return result;
+        return result.intValue();
     }
 }
