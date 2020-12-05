@@ -9,11 +9,11 @@ import pe.gob.minsa.vacuna.vacunacore.dto.TriajeDTO;
 public interface VacunaCoreRest {
 
 	
-	public TriajeDTO saveTriaje(TriajeDTO triajeDTO);
+	public TriajeDTO saveTriaje(TriajeDTO triajeDTO) throws Exception;
 
-	public CitaDTO saveCita(CitaDTO cita);
+	public CitaDTO saveCita(CitaDTO cita)throws Exception;
 	
-	public List<CitaDTO> listaCitas();
+	public List<CitaDTO> listaCitas()throws Exception;
 
-	public List<CitaPersonaDTO> listaCitasPersona();
+	public List<CitaPersonaDTO> listaCitasPersona()throws Exception;
 }

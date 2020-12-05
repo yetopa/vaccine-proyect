@@ -78,6 +78,7 @@ public class CitasController extends BaseController{
     	try {
     		rabbitSender.send(cita);
         	this.getResponseBaseBean().setCode(CODE_SUCCESS);
+        	getResponseBaseBean().setMessage("Cita enviada con exito");
     	} catch (Exception e) {
     		LOGGER.error(e);
     		this.getResponseBaseBean().setCode(CODE_RESPONSE_ERROR);

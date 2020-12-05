@@ -8,9 +8,9 @@ import pe.gob.minsa.vacuna.vacunacore.dto.TriajeDTO;
 
 public interface VacunaService {
 
-	public TriajeDTO saveTriaje(TriajeDTO dto) ;
-	public TriajeDTO validateTriajeByPersonaId(Long personaId);
-	public CitaDTO saveCita(CitaDTO cita);
-	public List<CitaDTO> listaCitas();
-	public List<CitaPersonaDTO> listaCitasPersona();
+	public TriajeDTO saveTriaje(TriajeDTO dto) throws Exception;
+	public TriajeDTO validateTriajeByPersonaId(Long personaId) throws Exception;
+	public CitaDTO saveCita(CitaDTO cita) throws Exception;
+	public List<CitaDTO> listaCitas() throws Exception;
+	public List<CitaPersonaDTO> listaCitasPersona() throws Exception;
 }

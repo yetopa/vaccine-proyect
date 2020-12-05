@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface PacienteCoreRest {
 
-    List<PersonaDTO> findPacienteByDni(String dni);
-    List<PersonaDTO> findPacienteByNombre(String dni);
-    PersonaDTO findPacienteByUniqueDni(String dni);
-    PacienteDTO findPacienteByPersonaId(Long personaId);
+    List<PersonaDTO> findPacienteByDni(String dni) throws Exception;
+    List<PersonaDTO> findPacienteByNombre(String dni)throws Exception;
+    PersonaDTO findPacienteByUniqueDni(String dni)throws Exception;
+    PacienteDTO findPacienteByPersonaId(Long personaId)throws Exception;
 
 }
