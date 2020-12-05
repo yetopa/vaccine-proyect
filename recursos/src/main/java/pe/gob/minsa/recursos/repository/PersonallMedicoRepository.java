@@ -12,9 +12,11 @@ public interface PersonallMedicoRepository extends JpaRepository<PersonalMedicoE
 
     @Query("select pms from PersonalMedicoCentroSaludEntity pms inner  join " +
             " PersonalMedicoEntity  p where pms.centroSaludByCentroSaludId = :centrosSalud")
-    public List<PersonalMedicoEntity> findByCentroSaludByCentroSaludId(CentroSaludEntity centrosSalud);
+    public List<PersonalMedicoEntity> findByCentroSaludByCentroSaludId(CentroSaludEntity centrosSalud) throws Exception;
     @Query("select pme.centroSaludByCentroSaludId from PersonalMedicoCentroSaludEntity  pme inner join  PersonalMedicoEntity  p  " +
             " on pme.personalMedicoId = p.personalMedicoId where p.personaId =:personaId")
-    public List<CentroSaludEntity> findCentroSaludByPersonaId(int personaId);
+    public List<CentroSaludEntity> findCentroSaludByPersonaId(int personaId) throws Exception;
+    
+    
 
 }

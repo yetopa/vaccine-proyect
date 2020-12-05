@@ -7,10 +7,11 @@ import java.util.List;
 
 public interface CentroSaludService {
 
-    public List<CentroSaludEntity> findByName(String name);
-    public List<PersonalMedicoEntity> findPersonalMedicoByCentroSalud(CentroSaludEntity centroSaludEntity);
-    public List<CentroSaludEntity> findCentroSaludByPersonalMedico(Integer personalMedicoId);
-    public PersonalMedicoEntity savePersonalMedico(PersonalMedicoEntity personalMedicoEntity);
+    public List<CentroSaludEntity> findByName(String name) throws Exception;
+    public List<PersonalMedicoEntity> findPersonalMedicoByCentroSalud(CentroSaludEntity centroSaludEntity) throws Exception;
+    public List<CentroSaludEntity> findCentroSaludByPersonalMedico(Integer personalMedicoId) throws Exception;
+    public PersonalMedicoEntity savePersonalMedico(PersonalMedicoEntity personalMedicoEntity) throws Exception;
+	List<CentroSaludEntity> listaCentroSalud() throws Exception;
 
 
 }

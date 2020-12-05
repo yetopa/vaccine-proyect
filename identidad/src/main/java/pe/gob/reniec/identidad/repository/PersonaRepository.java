@@ -9,12 +9,12 @@ import pe.gob.reniec.identidad.entity.PersonaEntity;
 
 public interface PersonaRepository extends CrudRepository<PersonaEntity, Long> {
 
-    public PersonaEntity findByDni(String dni);
-    public List<PersonaEntity> findByDniStartsWith(String dni);
+    public PersonaEntity findByDni(String dni)throws Exception;
+    public List<PersonaEntity> findByDniStartsWith(String dni) throws Exception;
     public List<PersonaEntity>
             findByNombreStartsWithOrApellidoPaternoStartsWithOrApellidoMaternoStartsWith
-            (String nombre, String apellidoPaterno, String apellidoMaterno);
+            (String nombre, String apellidoPaterno, String apellidoMaterno)throws Exception;
     
     @Query("select p from PersonaEntity p where personaId =:personaId")
-    public PersonaEntity findByPersonaId( Long personaId);
+    public PersonaEntity findByPersonaId( Long personaId)throws Exception;
 }

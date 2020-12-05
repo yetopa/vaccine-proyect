@@ -7,7 +7,6 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
@@ -22,7 +21,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import pe.gob.minsa.vacuna.web.bean.CitaDTO;
 import pe.gob.minsa.vacuna.web.bean.CitaPersonaDTO;
-import pe.gob.minsa.vacuna.web.bean.PacienteDTO;
 import pe.gob.minsa.vacuna.web.bean.ResponseBaseBean;
 import pe.gob.minsa.vacuna.web.message.RabbitMQSender;
 import pe.gob.minsa.vacuna.web.utils.ConfigurationProperties;
