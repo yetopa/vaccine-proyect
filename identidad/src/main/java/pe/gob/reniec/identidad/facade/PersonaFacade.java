@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface PersonaFacade {
 
-    public List<PersonaEntity> findPersonaByDni(String dni);
-    public List<PersonaEntity> findAllPersona();
-    public List<PersonaEntity> findByName(String nombre);
-    public PersonaEntity findByUniqueDni(String dni);
-    public PersonaEntity findByPersonaId(Long personaId);
+    public List<PersonaEntity> findPersonaByDni(String dni) throws Exception;
+    public List<PersonaEntity> findAllPersona() throws Exception;
+    public List<PersonaEntity> findByName(String nombre) throws Exception;
+    public PersonaEntity findByUniqueDni(String dni) throws Exception;
+    public PersonaEntity findByPersonaId(Long personaId) throws Exception;
 }

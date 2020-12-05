@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface PersonaService {
 
-    public List<PersonaEntity> findPersonaByDni(String dni);
-    public List<PersonaEntity> findAllPersona();
-    public List<PersonaEntity> findByNombreOrApellido(String nombre);
-    public PersonaEntity findByUniqueDni(String dni);
-    public PersonaEntity findByPersonId(Long personaId);
+    public List<PersonaEntity> findPersonaByDni(String dni) throws Exception;
+    public List<PersonaEntity> findAllPersona() throws Exception;;
+    public List<PersonaEntity> findByNombreOrApellido(String nombre) throws Exception;;
+    public PersonaEntity findByUniqueDni(String dni) throws Exception;;
+    public PersonaEntity findByPersonId(Long personaId) throws Exception;;
 }
