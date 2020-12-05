@@ -1,20 +1,24 @@
 package pe.gob.minsa.vacuna.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "paciente", schema = "dbvacuna", catalog = "")
-public class PacienteEntity {
-    private int pacienteId;
+public class PacienteEntity implements Serializable{
+    private Long pacienteId;
     private Integer personaId;
+    private String grupoSanguineo;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "paciente_id")
-    public int getPacienteId() {
+    public Long getPacienteId() {
         return pacienteId;
     }
 
-    public void setPacienteId(int pacienteId) {
+    public void setPacienteId(Long pacienteId) {
         this.pacienteId = pacienteId;
     }
 
@@ -27,8 +31,17 @@ public class PacienteEntity {
     public void setPersonaId(Integer personaId) {
         this.personaId = personaId;
     }
+    
 
-    @Override
+    public String getGrupoSanguineo() {
+		return grupoSanguineo;
+	}
+
+	public void setGrupoSanguineo(String grupoSanguineo) {
+		this.grupoSanguineo = grupoSanguineo;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -43,8 +56,8 @@ public class PacienteEntity {
 
     @Override
     public int hashCode() {
-        int result = pacienteId;
+        Long result = pacienteId;
         result = 31 * result + (personaId != null ? personaId.hashCode() : 0);
-        return result;
+        return result.intValue();
     }
 }

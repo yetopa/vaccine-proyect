@@ -32,5 +32,17 @@ public class PersonaFacadeImpl implements PersonaFacade{
         return personaService.findByNombreOrApellido(nombre);
     }
 
+    @Override
+    @GetMapping("/{dni}/uniqueDni")
+    public PersonaEntity findByUniqueDni(@PathVariable(name = "dni") String dni) {
+        return personaService.findByUniqueDni(dni);
+    }
+
+	@Override
+	@GetMapping("/{personaId}/personaId")
+	public PersonaEntity findByPersonaId(@PathVariable(name = "personaId")Long personaId) {
+		return personaService.findByPersonId(personaId);
+	}
+
 
 }

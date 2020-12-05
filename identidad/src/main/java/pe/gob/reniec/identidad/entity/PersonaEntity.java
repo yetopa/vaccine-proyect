@@ -6,20 +6,21 @@ import java.sql.Date;
 @Entity
 @Table(name = "persona", schema = "dbreniec", catalog = "")
 public class PersonaEntity {
-    private Integer personaId;
+    private Long personaId;
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
     private String dni;
     private Date fechaNacimiento;
+    private String sexo;
 
     @Id
     @Column(name = "persona_id")
-    public int getPersonaId() {
+    public Long getPersonaId() {
         return personaId;
     }
 
-    public void setPersonaId(int personaId) {
+    public void setPersonaId(Long personaId) {
         this.personaId = personaId;
     }
 
@@ -95,12 +96,22 @@ public class PersonaEntity {
 
     @Override
     public int hashCode() {
-        int result = personaId;
+        Long result = personaId;
         result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
         result = 31 * result + (apellidoPaterno != null ? apellidoPaterno.hashCode() : 0);
         result = 31 * result + (apellidoMaterno != null ? apellidoMaterno.hashCode() : 0);
         result = 31 * result + (dni != null ? dni.hashCode() : 0);
         result = 31 * result + (fechaNacimiento != null ? fechaNacimiento.hashCode() : 0);
-        return result;
+        return result.intValue();
+    }
+
+    @Basic
+    @Column(name = "sexo")
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 }
