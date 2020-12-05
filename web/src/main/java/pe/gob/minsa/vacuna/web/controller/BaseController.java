@@ -18,6 +18,9 @@ public class BaseController {
     /* KEY MODAL DASHBOARD */
     final String KEY_MODEL_DASHBOARD_PACIENTE = "dashboardPaciente";
     final String KEY_MODEL_DASHBOARD_PACIENTE_SIZE = "dashboardPacienteSize";
+    
+    final String KEY_MODEL_LISTA_CITAS = "listaCitas";
+    final String KEY_MODEL_LISTA_CITAS_SIZE = "listaCitasSize";
 
     @Autowired
     private ResponseBaseBean responseBaseBean;

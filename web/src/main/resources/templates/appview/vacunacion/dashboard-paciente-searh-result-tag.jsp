@@ -20,8 +20,8 @@
                         <td th:text="${paciente.fechaNacimiento}"></td>
                         <td th:text="${#strings.toString(paciente.edadMeses) + ' Meses'}"></td>
                        <td th:text="${paciente.sexo}"></td>
-                       <td><button type="button" class="btn btn-white" th:attr="onclick='showTriaje(\'' + ${paciente.dni}+'\')'" >Triaje</button></td>
-                       <td><button type="button" class="btn btn-white" th:attr="onclick='showGenerarCita(\'' + ${paciente.dni}+'\')'" >Cita</button></td>
+                       <td><button type="button" class="btn btn-primary" th:attr="onclick='showTriaje(\'' + ${paciente.dni}+'\')'" >Triaje</button></td>
+                       <td><button type="button" class="btn btn-danger" th:attr="onclick='showGenerarCita(\'' + ${paciente.dni}+'\')'" >Cita</button></td>
                  	</tr>
 			</tbody>
 			<tfoot>

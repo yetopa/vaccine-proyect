@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.gob.minsa.vacuna.vacunacore.dto.CitaDTO;
+import pe.gob.minsa.vacuna.vacunacore.dto.CitaPersonaDTO;
 import pe.gob.minsa.vacuna.vacunacore.dto.TriajeDTO;
 import pe.gob.minsa.vacuna.vacunacore.service.VacunaService;
 
@@ -36,6 +37,12 @@ public class VacunaCoreRestImpl implements VacunaCoreRest {
 	@GetMapping("/cita")
 	public List<CitaDTO> listaCitas() {
 		return vacunaService.listaCitas();
+	}
+	
+	@Override
+	@GetMapping("/cita/personas")
+	public List<CitaPersonaDTO> listaCitasPersona(){
+		return vacunaService.listaCitasPersona();
 	}
 
 }

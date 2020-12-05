@@ -16,25 +16,7 @@
 		<div id="div-lista-citas">
 			<!-- show page list customer -->
 		</div>
-		<div class="col-sm-4">
-			<div class="ibox">
-				<div class="ibox-content">
-					<div class="tab-content">
-						<div id="contact-1" class="tab-pane active">
-							<div class="row m-b-lg">
-                                        <div class="col-lg-4 text-center">
-                                            <div class="m-b-sm">
-                                                <img alt="image" class="img-circle" src="img/vacuna-campania.png"
-                                                     style="width: 350px"/>
-                                            </div>
-                                        </div>
 
-                                    </div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
 
